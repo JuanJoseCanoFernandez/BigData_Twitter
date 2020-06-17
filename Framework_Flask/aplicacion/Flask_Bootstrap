@@ -1,0 +1,13 @@
+La plantilla base de bootstrap ofrece los siguientes bloques que podemos sobreescribir:
+
+html: Contiene el contenido completo de la etiqueta <html>.
+html_attribs: Atribulos para la etiqueta <html>.
+head: Contiene el contenido completo de la etiqueta <head>.
+body: Contiene el contenido completo de la etiqueta <body>.
+body_attribs: Atribulos para la etiqueta <body>.
+title: Contiene el contenido completo de la etiqueta <title>.
+styles: Contiene todos los estilos CSS de la etiqueta <link>.
+metas: Contiene los <meta> de la cabacera.
+navbar: Un bloque vacío encima del contenido.
+content: Bloque para poner nuestro contenido.
+scripts: Contiene todos los scripts en la etiqueta <script> al final del body.
