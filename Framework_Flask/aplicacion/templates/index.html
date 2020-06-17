@@ -1,0 +1,112 @@
+<html>
+  <head>
+  {%- block styles %}
+      <!-- Bootstrap -->
+    <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="static/css/business-casual.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet"/>
+  {%- endblock styles %}
+  </head>
+  <body>
+    {% block navbar %}
+      <h1 class="site-heading text-center text-white d-none d-lg-block">
+        <span class="site-heading-upper text-primary mb-3">WEB GRATUITA PARA DIVERSOS ANÁLISIS DE TWITTER</span>
+        <span class="site-heading-lower">ANÁLISIS DE TWITTER</span>
+      </h1>
+
+      <!-- Navigation -->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-lg-4" id="mainNav">
+        <div class="container">   
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item active px-lg-4">
+                <a class="navbar-brand" href="/" style="color: white">Acerda De</a>
+              </li>
+              <li class="nav-item px-lg-4">
+                <a class="navbar-brand" href="/inicio" style="color: white">Análisis De Twitter</a>
+              </li>
+              {% if current_user.is_authenticated and current_user.is_admin()  %}
+                <li class="nav-item px-lg-4">
+                  <a class="navbar-brand" href="{{url_for('categorias')}}" style="color: white">Categorias</a>
+                </li>
+              {% endif %}
+            </ul>
+          </div>
+          <div class="collapse navbar-collapse navbar-right" id="navbarResponsive">
+            <ul class="navbar-nav mx-auto">
+              {% if current_user.is_authenticated %}
+                <li class="nav-item active px-lg-4">
+                  <a class="navbar-brand " href="/perfil/{{ current_user.username}}" style="color: white"> Perfil</a>
+                </li>
+                <li class="nav-item active px-lg-4">
+                  <a class="navbar-brand " href="/logout" style="color: white"> {{ current_user.username}} (Salir)</a>
+                </li>
+              {% else %}
+              <li class="nav-item px-lg-4">
+                <a class="navbar-brand " href="/login" style="color: white">Iniciar Sesión</a>
+              </li>
+              <li class="nav-item px-lg-4">
+                <a class="navbar-brand " href="/registro" style="color: white">Registro</a>
+              </li>
+              {% endif %}
+            </ul>
+          </div>
+        </div>
+      </nav>
+    {% endblock %}
+    {% block contenido %}
+      <section class="page-section clearfix">
+        <div class="container">
+          <div class="intro">
+            <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="static/img/intro.jpg" alt="">
+            <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+              <h2 class="section-heading mb-4">
+                <span class="section-heading-lower">¿Necesitas estudiar las necesidades de tus clientes en Twitter?</span>
+              </h2>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="page-section cta">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-9 mx-auto">
+              <div class="cta-inner text-center rounded">
+                <h2 class="section-heading mb-4">
+                  <span class="section-heading-lower"> Aquí puedes: </span><br>
+                  <span class="section-heading-upper">- Conozcer mejor las necesidades de las personas</span>
+                  <span class="section-heading-upper">- Mejorar la toma de decisiones</span>
+                  <span class="section-heading-upper">- Innovar nuevos productos y servicios</span>
+                  <span class="section-heading-upper">- Obtener una mayor eficiencia en su publicidad</span>
+                  <span class="section-heading-upper">- Reducir costes facilmente</span>
+                  <span class="section-heading-upper">- ¿Qué piensa el cliente de su empresa?</span>
+                </h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    {% endblock %}
+    {% block footer %}  
+      <footer class="footer text-faded text-center py-5 bg-dark">
+        <div class="container cta-inner text-center rounded">
+          <h2 class="section-heading mb-4"> Sobre nosotros:<br></h2>
+          <h3 class="section-heading mb-4">
+            <a href="https://es-es.facebook.com/"><i class="fa fa-facebook"></i></a>
+            <a href="https://twitter.com/explore"><i class="fa fa-twitter"></i></a>
+            <a href="https://es.linkedin.com/"><i class="fa fa-linkedin"></i></a>
+            <a href="https://myaccount.google.com/profile?pli=1"><i class="fa fa-google-plus"></i></a>
+            <a href="https://www.skype.com/es/"><i class="fa fa-skype"></i></a>
+          </h3>
+        </div>
+      </footer>
+    {% endblock %}
+    {% block scripts %}
+      <script src="static/vendor/jquery/jquery.min.js"></script>
+      <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      
+      
+    {% endblock %}
+  </body>
+</html>

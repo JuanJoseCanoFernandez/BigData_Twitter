@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block contenido %}
+<div class="container">
+  <div class="row">
+    <h3>Categorías</h3>  
+    <br/>
+    {% if current_user.is_authenticated and current_user.is_admin()  %}
+    <a class="btn btn-primary" href="{{url_for('categorias_new')}}" role="button">Nuevo análisis</a>
+    {% endif %}
+    <br/><br/>
+    <div class="panel panel-default">
+      <table class="table table-bordered table-striped">
+        <tr>
+          <th>Nombre</th>
+          {% if current_user.is_authenticated and current_user.is_admin()  %}
+          <th>Opción 1</th>
+          <th>Opción 2</th>
+          {% endif %} 
+        </tr>
+        {% for cat in categorias %}
+        <tr>
+          <td>{{cat.nombre}}</td>
+          {% if current_user.is_authenticated and current_user.is_admin()  %}
+          <td><a href="{{url_for('categorias_edit',id=cat.id)}}"><span class="glyphicon glyphicon-pencil"></span> Modificar</a></td>
+          <td><a href="{{url_for('categorias_delete',id=cat.id)}}"><span class="glyphicon glyphicon-trash"></span> Borrar</a></td>
+          {% endif %}   
+        </tr>
+        {% endfor %}
+      </table>
+    </div>  
+  </div>
+</div>
+{% endblock contenido%}
