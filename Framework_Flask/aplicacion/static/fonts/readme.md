@@ -1,0 +1,1 @@
+Simbolos para la app.
