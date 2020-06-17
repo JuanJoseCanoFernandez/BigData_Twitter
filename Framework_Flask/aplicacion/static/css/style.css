@@ -1,0 +1,43 @@
+body { 
+	-webkit-background-size: cover;
+
+    -moz-background-size: cover;
+    background-size: cover;
+	-o-background-size: cover;
+} 
+h1 { 
+    font-size: 2.2em; 
+} 
+     
+h2 { 
+    font-size: 2.0em;     
+} 
+     
+h3 { 
+    font-size: 1.8em; 
+} 
+     
+h4 {
+    font-size: 1.6em;     
+} 
+     
+h5 { 
+    font-size: 1.4em;     
+} 
+     
+p { 
+    font-size: 1.2em;     
+}
+
+nav {
+	background-color: black;
+	opacity: 0.7;
+
+}
+footer {
+  background-color: black;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: white;
+}
