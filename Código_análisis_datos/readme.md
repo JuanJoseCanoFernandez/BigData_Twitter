@@ -1,1 +1,1 @@
-En esta carpeta podreis observar diferentes ficheros para analizar datos de Twitter.
+En esta carpeta podréis observar diferentes ficheros para analizar datos de Twitter.
